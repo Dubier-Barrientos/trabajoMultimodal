@@ -155,5 +155,5 @@ if selected_page == "Multilenguaje":
                 st.write( 'Es un sentimiento Neutral 😐')
 
 elif selected_page == "Cámara":
-    
+    st.write("hello")
     

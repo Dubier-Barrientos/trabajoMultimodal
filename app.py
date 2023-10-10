@@ -60,7 +60,9 @@ if selected_page == "Te escuchamos":
             os.mkdir("temp")
         except:
             pass
-
+            
+        text = str(result.get("GET_TEXT"))
+        
         def remove_files(n):
             mp3_files = glob.glob("temp/*mp3")
             if len(mp3_files) != 0:

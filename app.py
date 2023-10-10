@@ -7,10 +7,10 @@ from PIL import Image
 import time
 import glob
 
-
-
 from gtts import gTTS
 from googletrans import Translator
+
+text = ""
 
 selected_page = st.sidebar.radio("Selecciona una opción:", ["Multilenguaje", "Cámara", "Análisis de sentimientos"])
 

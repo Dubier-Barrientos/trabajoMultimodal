@@ -20,9 +20,20 @@ st.subheader("TRADUCTOR")
 #image = Image.open('traductor.jpg')
 #st.image(image)
 
+button_style = {
+    "background-color": "#008CBA",
+    "color": "white",
+    "font-size": "16px",
+    "border": "none",
+    "border-radius": "5px",
+    "padding": "10px 20px",
+    "width": "200px",
+    "cursor": "pointer",
+}
+
 st.write("Toca el Botón y habla lo que quires traducir")
 
-stt_button = Button(label=" Habla ", width=200, )
+stt_button = Button(label=" Habla ", style=button_style)
 
 stt_button.js_on_event("button_click", CustomJS(code="""
     var recognition = new webkitSpeechRecognition();

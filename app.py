@@ -112,7 +112,7 @@ if result:
         return my_file_name, trans_text
     
     
-    display_output_text = st.sidebar.checkbox("Mostrar el texto")
+    display_output_text = st.checkbox("Mostrar el texto")
     
     if st.button("convertir"):
         result, output_text = text_to_speech(input_language, output_language, text, tld)

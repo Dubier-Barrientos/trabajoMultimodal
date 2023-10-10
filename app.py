@@ -62,7 +62,7 @@ if result:
     translator = Translator()
     
     text = str(result.get("GET_TEXT"))
-    in_lang = st.sidebar.selectbox(
+    in_lang = st.selectbox(
         "Selecciona el lenguaje de Entrada",
         ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés", "Italiano"),
     )
@@ -81,7 +81,7 @@ if result:
     elif in_lang == "Italiano":
         input_language = "it"   
     
-    out_lang = st.sidebar.selectbox(
+    out_lang = st.selectbox(
         "Selecciona el lenguaje de salida",
         ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés", "Italiano"),
     )

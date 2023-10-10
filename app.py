@@ -10,9 +10,7 @@ import glob
 from gtts import gTTS
 from googletrans import Translator
 
-text = ""
-
-selected_page = st.sidebar.radio("Selecciona una opción:", ["Multilenguaje", "Cámara", "Análisis de sentimientos"])
+selected_page = st.sidebar.radio("Selecciona una opción:", ["Multilenguaje", "Cámara"])
 
 if selected_page == "Multilenguaje":
     st.title("Escucha tu voz en otros idiomas")
@@ -21,6 +19,8 @@ if selected_page == "Multilenguaje":
     
     #image = Image.open('traductor.jpg')
     #st.image(image)
+
+    text=""
     
     stt_button = Button(label=" Graba aquí ", width=300)
     
@@ -138,9 +138,22 @@ if selected_page == "Multilenguaje":
     
         remove_files(7)
 
-elif selected_page == "Cámara":
-    st.write(text)
+    st.header('También puedes hacer un análisis de sentimiento')
+    if text:
+        if st.button("Analizar"):
+            translation = translator.translate(text, src="es", dest="en")
+            trans_text = translation.text
+            blob = TextBlob(trans_text)
+            st.write('Polarity: ', round(blob.sentiment.polarity,2))
+            st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
+            x=round(blob.sentiment.polarity,2)
+            if x >= 0.5:
+                st.write( 'Es un sentimiento Positivo 😊')
+            elif x <= -0.5:
+                st.write( 'Es un sentimiento Negativo 😔')
+            else:
+                st.write( 'Es un sentimiento Neutral 😐')
 
-elif selected_page == "Análisis de sentimientos":
-    st.write("hola")
+elif selected_page == "Cámara":
+    
     

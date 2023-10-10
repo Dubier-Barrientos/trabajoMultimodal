@@ -81,7 +81,7 @@ if result:
     elif in_lang == "Italiano":
         input_language = "it"   
     
-    out_lang = st.selectbox(
+    out_lang = st.sidebar.selectbox(
         "Selecciona el lenguaje de salida",
         ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés", "Italiano"),
     )
@@ -113,24 +113,6 @@ if result:
             "Sudáfrica",
         ),
     )
-    
-    if english_accent == "Defecto":
-        tld = "com"
-    elif english_accent == "Español":
-        tld = "com.mx"
-    
-    elif english_accent == "Reino Unido":
-        tld = "co.uk"
-    elif english_accent == "Estados Unidos":
-        tld = "com"
-    elif english_accent == "Canada":
-        tld = "ca"
-    elif english_accent == "Australia":
-        tld = "com.au"
-    elif english_accent == "Irlanda":
-        tld = "ie"
-    elif english_accent == "Sudáfrica":
-        tld = "co.za"
     
     
     def text_to_speech(input_language, output_language, text, tld):

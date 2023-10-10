@@ -62,7 +62,7 @@ if result:
     translator = Translator()
     
     text = str(result.get("GET_TEXT"))
-    in_lang = st.selectbox(
+    in_lang = st.sidebar.selectbox(
         "Selecciona el lenguaje de Entrada",
         ("Inglés", "Español", "Bengali", "Coreano", "Mandarín", "Japonés", "Italiano"),
     )
@@ -99,21 +99,6 @@ if result:
         output_language = "ja"
     elif out_lang == "Italiano":
         output_language = "it"   
-    
-    english_accent = st.selectbox(
-        "Selecciona el acento",
-        (
-            "Defecto",
-            "Español",
-            "Reino Unido",
-            "Estados Unidos",
-            "Canada",
-            "Australia",
-            "Irlanda",
-            "Sudáfrica",
-        ),
-    )
-    
     
     def text_to_speech(input_language, output_language, text, tld):
         translation = translator.translate(text, src=input_language, dest=output_language)

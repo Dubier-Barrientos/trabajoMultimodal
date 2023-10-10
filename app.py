@@ -6,6 +6,8 @@ from streamlit_bokeh_events import streamlit_bokeh_events
 from PIL import Image
 import time
 import glob
+from textblob import TextBlob
+import pandas as pd
 
 from gtts import gTTS
 from googletrans import Translator

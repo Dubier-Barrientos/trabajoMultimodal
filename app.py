@@ -21,8 +21,8 @@ if selected_page == "Te escuchamos":
     st.subheader("¿Que frase quieres decirnos?")
     
     
-    #image = Image.open('traductor.jpg')
-    #st.image(image)
+    image = Image.open('emotion.jpg')
+    st.image(image)
     
     stt_button = Button(label=" Graba aquí ", width=300)
     
@@ -94,6 +94,9 @@ if selected_page == "Te escuchamos":
 
 elif selected_page == "Cámara":
     st.title("¿Que frase quieres fotografiar?")
+
+    image = Image.open('photo.webp')
+    st.image(image)
 
     img_file_buffer = st.camera_input("Toma una Foto")
     

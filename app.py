@@ -109,6 +109,7 @@ elif selected_page == "Cámara":
         text=pytesseract.image_to_string(img_rgb)
         st.write(text)
 
+        translator = Translator()
         st.header('¿Quieres hacer un análisis de sentimiento?')
         if st.button("Analizar"):
             if text:

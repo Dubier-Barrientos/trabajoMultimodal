@@ -139,8 +139,8 @@ if selected_page == "Multilenguaje":
         remove_files(7)
 
         st.header('También puedes hacer un análisis de sentimiento')
-        if text:
-            if st.button("Analizar"):
+        if st.button("Analizar"):
+            if text:
                 translation = translator.translate(text, src="es", dest="en")
                 trans_text = translation.text
                 blob = TextBlob(trans_text)

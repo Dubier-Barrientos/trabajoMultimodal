@@ -21,8 +21,6 @@ if selected_page == "Multilenguaje":
     
     #image = Image.open('traductor.jpg')
     #st.image(image)
-
-    text=""
     
     stt_button = Button(label=" Graba aquí ", width=300)
     

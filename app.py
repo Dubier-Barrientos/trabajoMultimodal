@@ -138,21 +138,21 @@ if selected_page == "Multilenguaje":
     
         remove_files(7)
 
-    st.header('También puedes hacer un análisis de sentimiento')
-    if text:
-        if st.button("Analizar"):
-            translation = translator.translate(text, src="es", dest="en")
-            trans_text = translation.text
-            blob = TextBlob(trans_text)
-            st.write('Polarity: ', round(blob.sentiment.polarity,2))
-            st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
-            x=round(blob.sentiment.polarity,2)
-            if x >= 0.5:
-                st.write( 'Es un sentimiento Positivo 😊')
-            elif x <= -0.5:
-                st.write( 'Es un sentimiento Negativo 😔')
-            else:
-                st.write( 'Es un sentimiento Neutral 😐')
+        st.header('También puedes hacer un análisis de sentimiento')
+        if text:
+            if st.button("Analizar"):
+                translation = translator.translate(text, src="es", dest="en")
+                trans_text = translation.text
+                blob = TextBlob(trans_text)
+                st.write('Polarity: ', round(blob.sentiment.polarity,2))
+                st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
+                x=round(blob.sentiment.polarity,2)
+                if x >= 0.5:
+                    st.write( 'Es un sentimiento Positivo 😊')
+                elif x <= -0.5:
+                    st.write( 'Es un sentimiento Negativo 😔')
+                else:
+                    st.write( 'Es un sentimiento Neutral 😐')
 
 elif selected_page == "Cámara":
     st.write("hello")

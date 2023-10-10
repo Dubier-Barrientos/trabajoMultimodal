@@ -75,6 +75,7 @@ if selected_page == "Te escuchamos":
     
         remove_files(7)
 
+        translator = Translator()
         st.header('¿Quieres hacer un análisis de sentimiento?')
         if st.button("Analizar"):
             if text:

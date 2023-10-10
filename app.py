@@ -114,7 +114,7 @@ if result:
     
     display_output_text = st.sidebar.checkbox("Mostrar el texto")
     
-    if st.sidebar.button("convertir"):
+    if st.button("convertir"):
         result, output_text = text_to_speech(input_language, output_language, text, tld)
         audio_file = open(f"temp/{result}.mp3", "rb")
         audio_bytes = audio_file.read()
